@@ -13,7 +13,8 @@ $(function(){
             "edit",
             "view",
             "export",
-            "map"
+            "map",
+            "scene3d"
         ];
         var cnt=0;
     $(".col-xs-6").each(function(){
