@@ -111,4 +111,5 @@
     <!-- /Slides -->
     <string name="routing_header">You can either edit or use the routing web service available on the MapMint server to compute route to the selected target.</string>
     <string name="choice">Choice</string>
+    <string name="scene3d">3D Scene</string>
 </resources>
