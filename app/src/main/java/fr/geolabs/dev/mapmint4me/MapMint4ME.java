@@ -493,6 +493,17 @@ public class MapMint4ME extends Activity implements
         }
     }
 
+    // Override the default behavior of the app quitting if back button is pressed
+    // In this case it will go to the previous page
+    @Override
+    public void onBackPressed() {
+        if(myWebView.canGoBack()){
+            myWebView.goBack();
+        }else{
+            super.onBackPressed();
+        }
+    }
+
     private String channel_name="MapMint4ME";
     private String channel_description="MapMint4ME channel used for notification";
     public String CHANNEL_ID="MapMint4ME-11223344";
