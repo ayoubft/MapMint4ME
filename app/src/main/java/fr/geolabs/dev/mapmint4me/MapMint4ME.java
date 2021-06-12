@@ -496,7 +496,7 @@ public class MapMint4ME extends Activity implements
     // Override the default behavior of the app quitting if back button is pressed
     // In this case it will go to the previous page
     @Override
-    public void onBackPressed() {
+    public void onBackPressed() {   
         if(myWebView.canGoBack()){
             myWebView.goBack();
         }else{
