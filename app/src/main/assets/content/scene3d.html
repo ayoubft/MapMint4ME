@@ -1,7 +1,92 @@
+<!--Some text describing what to be done-->
 <h4>Minimalist 3D scanning.</h4>
-<p>Take pictures of your target. Wait. Enjoy your 3D model.</p>
+<p>Take pictures of your target. Export for processing. Enjoy your 3D model.</p>
 
+<!--The little navbar-->
 <ol class="breadcrumb">
     <li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
     <li class="active"><span class="glyphicon glyphicon-sunglasses" aria-hidden="true"></span> 3D Scene</li>
 </ol>
+
+<center>
+
+    <!--This is the panel containing all needed buttons-->
+    <div class="panel-body">
+
+        <div class="row">
+            <!--First button for taking a picture using the camera -->
+            <div class="col-xs-6 col-sm-3" style="margin-top: 15px;">
+                <a id="take_pics_3d" class="btn btn-lg btn-default btn-block" role="button">
+                    <center>
+                        <button class="btn btn-lg btn-primary btn-block btn-circle-lg">
+                            <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+                        </button>
+                    </center>
+                    Take pictures
+                </a>
+            </div>
+
+            <!--Second button for selecting a picture from Gallery or Files -->
+            <div class="col-xs-6 col-sm-3" style="margin-top: 15px;">
+                <a id="select_pics_3d" class="btn btn-lg btn-default btn-block" role="button">
+                    <center>
+                        <button class="btn btn-lg btn-warning btn-block btn-circle-lg">
+                            <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
+                        </button>
+                    </center>
+                    Select pictures
+                </a>
+            </div>
+
+            <!--Third button for visualizing pictures taken by camera or selected from Gallery-->
+            <div class="col-xs-6 col-sm-3" style="margin-top: 15px;">
+                <a id="visualize_pics_3d" class="btn btn-lg btn-default btn-block" role="button">
+                    <center>
+                        <button class="btn btn-lg btn-block btn-block btn-circle-lg">
+                            <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
+                        </button>
+                    </center>
+                    Visualize pics
+                </a>
+            </div>
+
+            <!--Fourth button for exporting -->
+            <div class="col-xs-6 col-sm-3" style="margin-top: 15px;">
+                <a class="btn btn-lg btn-default btn-block" role="button">
+                    <center>
+                        <button class="btn btn-lg btn-danger btn-block btn-circle-lg">
+                            <span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span>
+                        </button>
+                    </center>
+                    Export
+                </a>
+            </div>
+
+        </div>
+    </div>
+</center>
+
+<!--
+*****************************************************
+*                   See scene3d.js                  *
+*****************************************************
+<script>
+    let pic;
+    // make a btn for selecting pictures
+    let btn_select_pics = document.getElementById("select_pics_3d");
+    // make a btn for taking pictures
+    let btn_take_pics = document.getElementById("take_pics_3d");
+
+    let alertAlert = function(){
+        alert('I was clicked');
+    }
+
+    btn_select_pics.addEventListener('click', function(){
+        pic = window.Android.pickupImage('99','99');
+        });
+
+    btn_take_pics.addEventListener('click', function(){
+        pic = window.Android.queryCamera('99','99');
+        });
+    loadNewPicture(99,99,pic)
+</script>
